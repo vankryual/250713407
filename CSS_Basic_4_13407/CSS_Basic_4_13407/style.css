@@ -1,0 +1,8 @@
+h1 {
+            text-align: center;
+            border: 0.5px solid rgba(113, 113, 182, 0.7);
+            border-radius: 15px;
+            background-color: #332f73c7;
+            color: #ffffff;
+            padding: 5px 10px;
+        }
