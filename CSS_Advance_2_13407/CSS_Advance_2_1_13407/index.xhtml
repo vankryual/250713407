@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="id" lang="id">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Daftar Lomba Teknologi</title>
+    <style type="text/css">
+        body {
+            background-color: #87ceeb;
+            font-family: "Trebuchet MS", Verdana, sans-serif;
+            color: #12294d;
+            margin: 0;
+            padding: 20px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        #pembungkus {
+            width: 100%;
+            max-width: 760px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            padding: 24px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            max-height: 90vh;
+        }
+
+        .header-form {
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+        }
+
+        h1 {
+            color: #0b3d91;
+            border-left: 8px solid #1e6fd9;
+            padding-left: 12px;
+            margin-top: 0;
+            margin-bottom: 6px;
+            font-size: 24px;
+        }
+
+        #pengantar {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #3a5a8c;
+            font-size: 14px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .scroll-container {
+            overflow-y: auto;
+            max-height: 60vh;
+            padding-right: 6px;
+            border-radius: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #bcd6f5;
+            border-radius: 4px;
+        }
+
+        #tabel-daftar {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #ffffff;
+            border: 2px solid #0b3d91;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #tabel-daftar th,
+        #tabel-daftar td {
+            padding: 12px 16px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid #c3d9f5;
+        }
+
+        #tabel-daftar th.judul-tabel {
+            background-color: #07265e;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 14px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        #tabel-daftar th[scope="row"] {
+            width: 34%;
+            background-color: #0b3d91;
+            color: #ffffff;
+            font-weight: normal;
+            border-right: 3px dashed #bcd6f5;
+        }
+
+        #tabel-daftar td {
+            background-color: #f3f8fe;
+        }
+
+        #tabel-daftar tr:nth-child(even) td {
+            background-color: #e6f0fc;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px 10px;
+            border: 2px solid #7fb0ea;
+            border-radius: 6px;
+            background-color: #ffffff;
+            font-family: inherit;
+            font-size: 14px;
+            color: #12294d;
+        }
+
+        select {
+            width: auto;
+            min-width: 120px;
+        }
+
+        input[type="text"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #0b3d91;
+            box-shadow: 0 0 0 3px #bcd6f5;
+        }
+
+        .baris-role {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .baris-role label {
+            width: 110px;
+            flex-shrink: 0;
+            font-weight: bold;
+            color: #0b3d91;
+        }
+
+        .baris-role .nomor {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            margin-right: 6px;
+            text-align: center;
+            font-size: 12px;
+            color: #ffffff;
+            background-color: #1e6fd9;
+            border-radius: 50%;
+        }
+
+        .baris-role input[type="text"] {
+            flex: 1;
+        }
+
+        .pilihan {
+            margin-bottom: 6px;
+        }
+
+        .pilihan label {
+            margin-right: 16px;
+            cursor: pointer;
+        }
+
+        #filekarya {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        .tombol-file {
+            display: inline-block;
+            background-color: #1e6fd9;
+            color: #ffffff;
+            padding: 9px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .tombol-file:hover {
+            background-color: #0b3d91;
+        }
+
+        #filekarya:focus + .tombol-file {
+            box-shadow: 0 0 0 3px #bcd6f5;
+        }
+
+        .info-file {
+            margin-left: 10px;
+            font-size: 13px;
+            color: #3a5a8c;
+        }
+
+        .area-submit {
+            text-align: center;
+            padding-top: 16px;
+            margin-top: 10px;
+        }
+
+        .tombol-kirim {
+            background-color: #0b3d91;
+            color: #ffffff;
+            border: none;
+            border-radius: 999px;
+            padding: 12px 36px;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .tombol-kirim:hover {
+            background-color: #1e6fd9;
+        }
+    </style>
+</head>
+<body>
+    <div id="pembungkus">
+        <div class="header-form">
+            <h1>Daftar Lomba Teknologi</h1>
+            <p id="pengantar">Isi data tim kamu di bawah ini, lalu kirim sebelum pendaftaran ditutup.</p>
+        </div>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="scroll-container">
+                <table id="tabel-daftar">
+                    <tr>
+                        <th colspan="2" class="judul-tabel">Data Pendaftar</th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="namatim">Nama Tim Kalian</label></th>
+                        <td><input type="text" id="namatim" name="namatim" size="30" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="ketua">Ketua Tim</label></th>
+                        <td><input type="text" id="ketua" name="ketua" size="30" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="jumlah">Banyak Anggota</label></th>
+                        <td>
+                            <select id="jumlah" name="jumlah">
+                                <option>1 Orang</option>
+                                <option>2 Orang</option>
+                                <option>3 Orang</option>
+                                <option>4 Orang</option>
+                                <option>5 Orang</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="telepon">Nomor HP yang Bisa Dihubungi</label></th>
+                        <td><input type="text" id="telepon" name="telepon" size="30" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="universitas">Berasal dari Kampus</label></th>
+                        <td><input type="text" id="universitas" name="universitas" size="30" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Daftar Role</th>
+                        <td>
+                            <div class="baris-role">
+                                <label for="roamer"><span class="nomor">1.</span> Roamer</label>
+                                <input type="text" id="roamer" name="roamer" size="25" />
+                            </div>
+                            <div class="baris-role">
+                                <label for="midlane"><span class="nomor">2.</span> Mid Lane</label>
+                                <input type="text" id="midlane" name="midlane" size="25" />
+                            </div>
+                            <div class="baris-role">
+                                <label for="goldlane"><span class="nomor">3.</span> Gold Lane</label>
+                                <input type="text" id="goldlane" name="goldlane" size="25" />
+                            </div>
+                            <div class="baris-role">
+                                <label for="clashlane"><span class="nomor">4.</span> Clash Lane</label>
+                                <input type="text" id="clashlane" name="clashlane" size="25" />
+                            </div>
+                            <div class="baris-role">
+                                <label for="versatile"><span class="nomor">5.</span> Versatile</label>
+                                <input type="text" id="versatile" name="versatile" size="25" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cabang yang Diikuti</th>
+                        <td>
+                            <div class="pilihan">
+                                <input type="checkbox" id="coding" name="bidang" value="Coding" />
+                                <label for="coding">Coding</label>
+                                <input type="checkbox" id="desain" name="bidang" value="Desain" />
+                                <label for="desain">Desain</label>
+                            </div>
+                            <div class="pilihan">
+                                <input type="checkbox" id="video" name="bidang" value="Video" />
+                                <label for="video">Video</label>
+                                <input type="checkbox" id="essay" name="bidang" value="Essay" />
+                                <label for="essay">Essay</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Status Peserta</th>
+                        <td>
+                            <div class="pilihan">
+                                <input type="radio" id="mahasiswa" name="peserta" value="Mahasiswa" />
+                                <label for="mahasiswa">Mahasiswa</label>
+                                <input type="radio" id="umum" name="peserta" value="Umum" />
+                                <label for="umum">Umum</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="deskripsi">Ceritakan Karyamu</label></th>
+                        <td><textarea id="deskripsi" name="deskripsi" rows="8" cols="30"></textarea></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><label for="alasan">Kenapa Ikut Lomba Ini?</label></th>
+                        <td><textarea id="alasan" name="alasan" rows="5" cols="30"></textarea></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Unggah Karya</th>
+                        <td>
+                            <input type="file" id="filekarya" name="filekarya"
+                                   accept="application/pdf, image/jpeg, image/png" />
+                            <label for="filekarya" class="tombol-file">Pilih Berkas</label>
+                            <span class="info-file">Format: PDF, JPG, atau PNG</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="area-submit">
+                <input type="submit" class="tombol-kirim" value="Kirim Pendaftaran" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>

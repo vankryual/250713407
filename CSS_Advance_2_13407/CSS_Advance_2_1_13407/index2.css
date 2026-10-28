@@ -1,0 +1,235 @@
+body {
+    background-color: #87ceeb;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    color: #12294d;
+    margin: 0;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+#pembungkus {
+    width: 100%;
+    max-width: 760px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.header-form {
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+}
+
+h1 {
+    color: #0b3d91;
+    border-left: 8px solid #1e6fd9;
+    padding-left: 12px;
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-size: 24px;
+}
+
+#pengantar {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #3a5a8c;
+    font-size: 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.scroll-container {
+    overflow-y: auto;
+    max-height: 60vh;
+    padding-right: 6px;
+    border-radius: 8px;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #bcd6f5;
+    border-radius: 4px;
+}
+
+#tabel-daftar {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    border: 2px solid #0b3d91;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#tabel-daftar th,
+#tabel-daftar td {
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #c3d9f5;
+}
+
+#tabel-daftar th.judul-tabel {
+    background-color: #07265e;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#tabel-daftar th[scope="row"] {
+    width: 34%;
+    background-color: #0b3d91;
+    color: #ffffff;
+    font-weight: normal;
+    border-right: 3px dashed #bcd6f5;
+}
+
+#tabel-daftar td {
+    background-color: #f3f8fe;
+}
+
+#tabel-daftar tr:nth-child(even) td {
+    background-color: #e6f0fc;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    border: 2px solid #7fb0ea;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    color: #12294d;
+}
+
+select {
+    width: auto;
+    min-width: 120px;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0b3d91;
+    box-shadow: 0 0 0 3px #bcd6f5;
+}
+
+.baris-role {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.baris-role label {
+    width: 110px;
+    flex-shrink: 0;
+    font-weight: bold;
+    color: #0b3d91;
+}
+
+.baris-role .nomor {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    margin-right: 6px;
+    text-align: center;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #1e6fd9;
+    border-radius: 50%;
+}
+
+.baris-role input[type="text"] {
+    flex: 1;
+}
+
+.pilihan {
+    margin-bottom: 6px;
+}
+
+.pilihan label {
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+#filekarya {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.tombol-file {
+    display: inline-block;
+    background-color: #1e6fd9;
+    color: #ffffff;
+    padding: 9px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.tombol-file:hover {
+    background-color: #0b3d91;
+}
+
+#filekarya:focus + .tombol-file {
+    box-shadow: 0 0 0 3px #bcd6f5;
+}
+
+.info-file {
+    margin-left: 10px;
+    font-size: 13px;
+    color: #3a5a8c;
+}
+
+.area-submit {
+    text-align: center;
+    padding-top: 16px;
+    margin-top: 10px;
+}
+
+.tombol-kirim {
+    background-color: #0b3d91;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 36px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tombol-kirim:hover {
+    background-color: #1e6fd9;
+}
